@@ -43,6 +43,10 @@ namespace Sistema.TI.BackEnd
 
             app.UseRouting();
 
+            app.UseCors(
+              options => options.SetIsOriginAllowed(x => _ = true).AllowAnyMethod().AllowAnyHeader().AllowCredentials()
+            );
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -55,6 +59,15 @@ namespace Sistema.TI.BackEnd
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+
+
+
+            //app.UseCors(c =>
+            //{
+            //    c.AllowAnyHeader();
+            //    c.AllowAnyMethod();
+            //    c.AllowAnyOrigin();
+            //});
         }
     }
 }

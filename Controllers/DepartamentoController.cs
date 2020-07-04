@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sistema.TI.Models;
 using Sistema.TI.Repositories;
 using FluentValidation.Results;
+using System.Web.Http.Cors;
 
 namespace Sistema.TI.BackEnd.Controllers
 {
